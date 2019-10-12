@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Let&#39;s talk about ...</title>
+    <link>https://fidencio.github.io/posts/</link>
+    <description>Recent content in Posts on Let&#39;s talk about ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://fidencio.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Fresh Start</title>
+      <link>https://fidencio.github.io/posts/2019-10-12-a-fresh-start/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://fidencio.github.io/posts/2019-10-12-a-fresh-start/</guid>
+      <description> ToDo List Retire fabianofidencio.blogspot.com Find a good static site generator Find a simple minimalistic theme Find a place to host the new blog Blog more often  </description>
+    </item>
+    
+  </channel>
+</rss>
