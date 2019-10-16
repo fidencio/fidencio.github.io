@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fidencio.github.io/tags/virt/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fidencio.github.io/tags/virt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +17,190 @@
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</guid>
-      <description>This is the first blog post of a series which will cover Libosinfo, what it is, who uses it, how it is used, how to manage it, and, finally, how to contribute to it.
-A quick overview Libosinfo is the operating system information database. As a project, it consists of three different parts, with the goal to provide a single place containing all the required information about an operating system in order to provision and manage it in a virtualized environment.</description>
+      <description>
+
+&lt;p&gt;This is the first blog post of a series which will cover Libosinfo, what it is,
+who uses it, how it is used, how to manage it, and, finally, how to contribute
+to it.&lt;/p&gt;
+
+&lt;h3 id=&#34;a-quick-overview&#34;&gt;A quick overview&lt;/h3&gt;
+
+&lt;p&gt;Libosinfo is &lt;strong&gt;the&lt;/strong&gt; operating system information database. As a project, it
+consists of three different parts, with the goal to provide a single place
+containing all the required information about an operating system in order to
+provision and manage it in a virtualized environment.&lt;/p&gt;
+
+&lt;p&gt;The project allows management applications to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Automatically identify for which operating system an ISO image or an
+installation tree is intended to;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find the download location of installable ISOs and LiveCDs images;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find the location of installation trees;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Query the minimum, recommended, and maximum CPU / memory / disk resources
+for an operating system;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Query the hardware supported by an operating system;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Generate scripts suitable for automating &amp;ldquo;Server&amp;rdquo; and &amp;ldquo;Workstation&amp;rdquo;
+installations;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;the-library-libosinfo&#34;&gt;The library (libosinfo)&lt;/h3&gt;
+
+&lt;p&gt;The library API is written in C, taking advantage of GLib and GObject. Thanks
+to GObject Introspection, the API is automatically available in all dynamic
+programming languages with bindings for GObject (JavaScript, Perl, Python, and
+Ruby). Auto-generated bindings for Vala are also provided.&lt;/p&gt;
+
+&lt;p&gt;As part of &lt;strong&gt;libosinfo&lt;/strong&gt;, three tools are provided:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-detect&lt;/strong&gt;: Used to detect an Operating System from a given ISO or
+installation tree.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-install-script&lt;/strong&gt;: Used to generate a &amp;ldquo;Server&amp;rdquo; or &amp;ldquo;Workstation&amp;rdquo;
+install-script to perform automated installation of an Operating System;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-query&lt;/strong&gt;: Used to query information from the database;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;the-database-osinfo-db&#34;&gt;The database (osinfo-db)&lt;/h3&gt;
+
+&lt;p&gt;The database is written in XML and it can either be consumed via libosinfo APIs
+or directly via management applications&amp;rsquo; own code.&lt;/p&gt;
+
+&lt;p&gt;It contains information about the operating systems, devices, installation
+scripts, platforms, and datamaps (keyboard and language mappings for Windows
+and Linux OSes).&lt;/p&gt;
+
+&lt;h3 id=&#34;the-database-tools-osinfo-db-tools&#34;&gt;The database tools (osinfo-db-tools)&lt;/h3&gt;
+
+&lt;p&gt;These are tools that can be used to manage the database, which is distributed
+as a tarball archive.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-db-import&lt;/strong&gt;: Used to import an osinfo database archive;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-db-export&lt;/strong&gt;: Used to export an osinfo database archive;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-db-validate&lt;/strong&gt;: Used to validate the XML files in one of the osinfo
+database locations for compliance with the RNG schema.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;osinfo-db-path&lt;/strong&gt;: Used to report the paths associated with the standard
+database locations;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;the-consumers&#34;&gt;The consumers &amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;Libosinfo and osinfo-db have management applications as their target audience.
+Currently the libosinfo project is consumed by big players in the virtual
+machine management environment such as &lt;a href=&#34;https://docs.openstack.org/nova/latest/&#34;&gt;OpenStack Nova&lt;/a&gt;, &lt;a href=&#34;https://virt-manager.org&#34;&gt;virt-manager&lt;/a&gt;, &lt;a href=&#34;https://wiki.gnome.org/Apps/Boxes&#34;&gt;GNOME Boxes&lt;/a&gt;,
+and &lt;a href=&#34;https://cockpit-project/guide/latest/feature-virtualmachines&#34;&gt;Cockpit Machines&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;a-little-bit-about-them&#34;&gt;&amp;hellip; a little bit about them &amp;hellip;&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://docs.openstack.org/nova/latest/&#34;&gt;OpenStack Nova&lt;/a&gt;: An &lt;a href=&#34;https://www.openstack.org/&#34;&gt;OpenStack&lt;/a&gt; project that provides a way to provision virtual
+machines, baremetal servers, and (limited supported for) system containers.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://virt-manager.org&#34;&gt;virt-manager&lt;/a&gt;: An application for managing
+virtual machines through libvirt.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://wiki.gnome.org/Apps/Boxes&#34;&gt;GNOME Boxes&lt;/a&gt;: A simple application to
+view, access, and manage remote and virtual systems.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://cockpit-project/guide/latest/feature-virtualmachines&#34;&gt;Cockpit Machines&lt;/a&gt;: A &lt;a href=&#34;https://cockpit-project.org/&#34;&gt;Cockpit&lt;/a&gt; extension to manage virtual machines running
+on the host.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;and-why-they-use-it&#34;&gt;&amp;hellip; and why they use it&lt;/h4&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Download ISOs&lt;/strong&gt;: As libosinfo provides the ISO URLs, management
+applications can offer the user the option to download a specific operating
+system;&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Automatically detect the ISO being used&lt;/strong&gt;: As libosinfo can detect the
+operating system of an ISO, management applications can use this info to
+set reasonable default values for resources, to select the hardware
+supported, and to perform unattended installations.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Start tree installation&lt;/strong&gt;: As libosinfo provides the tree installation
+URLs, management applications can use it to start a network-based
+installation without having to download the whole operating system ISO;&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager (via virt-install)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Set reasonable default values for RAM, CPU, and disk resources&lt;/strong&gt;: As
+libosinfo knows the values that are recommended by the operating system&amp;rsquo;s
+vendors, management applications can rely on that when setting the default
+resources for an installation.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Automatically set the hardware supported&lt;/strong&gt;: As libosinfo provides the list
+of hardware supported by an operating system, management applications can
+choose the best defaults based on this information, without taking the risk
+of ending up with a non-bootable guest.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines (via virt-install)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Unattended install&lt;/strong&gt;: as libosinfo provides unattended installations
+scripts for CentOS, Debian, Fedora, Fedora Silverblue, Microsoft Windows,
+OpenSUSE, Red Hat Enterprise Linux, and Ubuntu, management applications can
+perform unattended installations for both &amp;ldquo;Workstation&amp;rdquo; and &amp;ldquo;Server&amp;rdquo;
+profiles.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; OpenStack Nova&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager (via virt-install)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes (only supports &amp;ldquo;Workstation&amp;rdquo; installations)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines (this is still a &lt;a href=&#34;https://github.com/cockpit-project/cockpit/pull/12716&#34;&gt;work-in-progress&lt;/a&gt;)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;what-s-next&#34;&gt;What&amp;rsquo;s next?&lt;/h3&gt;
+
+&lt;p&gt;The next blog post will provide a &amp;ldquo;demo&amp;rdquo; of an unattended installation using
+both GNOME Boxes and virt-install and, based on that, explain how libosinfo is
+internally used by these projects.&lt;/p&gt;
+
+&lt;p&gt;By doing that, we&amp;rsquo;ll both cover how libosinfo can be used and also demonstrate
+how it can ease the usage of those management applications.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
