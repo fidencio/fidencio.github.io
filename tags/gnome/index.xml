@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Let&#39;s talk about ...</title>
-    <link>https://fidencio.github.io/posts/</link>
-    <description>Recent content in Posts on Let&#39;s talk about ...</description>
+    <title>gnome on Let&#39;s talk about ...</title>
+    <link>https://fidencio.github.io/tags/gnome/</link>
+    <description>Recent content in gnome on Let&#39;s talk about ...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fidencio.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fidencio.github.io/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</guid>
       <description>This is the first blog post of a series which will cover Libosinfo, what it is, who uses it, how it is used, how to manage it, and, finally, how to contribute to it.
 A quick overview Libosinfo is the operating system information database. As a project, it consists of three different parts, with the goal to provide a single place containing all the required information about an operating system in order to provision and manage it in a virtualized environment.</description>
-    </item>
-    
-    <item>
-      <title>A Fresh Start</title>
-      <link>https://fidencio.github.io/posts/2019-10-12-a-fresh-start/</link>
-      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://fidencio.github.io/posts/2019-10-12-a-fresh-start/</guid>
-      <description> ToDo List Retire fabianofidencio.blogspot.com Find a good static site generator Find a simple minimalistic theme Find a place to host the new blog Blog more often  </description>
     </item>
     
   </channel>

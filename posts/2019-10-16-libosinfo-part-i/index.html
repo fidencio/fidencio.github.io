@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Libosinfo (Part I)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #56A3A6;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://fidencio.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/vala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.58.3" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Libosinfo (Part I)</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="../../">home</a></li>
+                            
+                                <li><a href="../../posts">posts</a></li>
+                            
+                                <li><a href="../../about">about</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:fabiano@fidencio.org"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://gitlab.com/fidencio/"><i class="fa fa-gitlab"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/fidencio/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ffidencio/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div class="item">
+        <h2>Libosinfo (Part I)</h2>
+        <h5></h5>
+        
+<a href="https://fidencio.github.iotags/virt"><kbd class="item-tag">virt</kbd></a>
+
+<a href="https://fidencio.github.iotags/gnome"><kbd class="item-tag">gnome</kbd></a>
+
+<a href="https://fidencio.github.iotags/fedora"><kbd class="item-tag">fedora</kbd></a>
+
+
+    </div>
+
+    <br> <div class="text-justify">
+
+<p>This is the first blog post of a series which will cover Libosinfo, what it is,
+who uses it, how it is used, how to manage it, and, finally, how to contribute
+to it.</p>
+
+<h3 id="a-quick-overview">A quick overview</h3>
+
+<p>Libosinfo is <strong>the</strong> operating system information database. As a project, it
+consists of three different parts, with the goal to provide a single place
+containing all the required information about an operating system in order to
+provision and manage it in a virtualized environment.</p>
+
+<p>The project allows management applications to:</p>
+
+<ul>
+<li><p>Automatically identify for which operating system an ISO image or an
+installation tree is intended to;</p></li>
+
+<li><p>Find the download location of installable ISOs and LiveCDs images;</p></li>
+
+<li><p>Find the location of installation trees;</p></li>
+
+<li><p>Query the minimum, recommended, and maximum CPU / memory / disk resources
+for an operating system;</p></li>
+
+<li><p>Query the hardware supported by an operating system;</p></li>
+
+<li><p>Generate scripts suitable for automating &ldquo;Server&rdquo; and &ldquo;Workstation&rdquo;
+installations;</p></li>
+</ul>
+
+<h3 id="the-library-libosinfo">The library (libosinfo)</h3>
+
+<p>The library API is written in C, taking advantage of GLib and GObject. Thanks
+to GObject Introspection, the API is automatically available in all dynamic
+programming languages with bindings for GObject (JavaScript, Perl, Python, and
+Ruby). Auto-generated bindings for Vala are also provided.</p>
+
+<p>As part of <strong>libosinfo</strong>, three tools are provided:</p>
+
+<ul>
+<li><p><strong>osinfo-detect</strong>: Used to detect an Operating System from a given ISO or
+installation tree.</p></li>
+
+<li><p><strong>osinfo-install-script</strong>: Used to generate a &ldquo;Server&rdquo; or &ldquo;Workstation&rdquo;
+install-script to perform automated installation of an Operating System;</p></li>
+
+<li><p><strong>osinfo-query</strong>: Used to query information from the database;</p></li>
+</ul>
+
+<h3 id="the-database-osinfo-db">The database (osinfo-db)</h3>
+
+<p>The database is written in XML and it can either be consumed via libosinfo APIs
+or directly via management applications&rsquo; own code.</p>
+
+<p>It contains information about the operating systems, devices, installation
+scripts, platforms, and datamaps (keyboard and language mappings for Windows
+and Linux OSes).</p>
+
+<h3 id="the-database-tools-osinfo-db-tools">The database tools (osinfo-db-tools)</h3>
+
+<p>These are tools that can be used to manage the database, which is distributed
+as a tarball archive.</p>
+
+<ul>
+<li><p><strong>osinfo-db-import</strong>: Used to import an osinfo database archive;</p></li>
+
+<li><p><strong>osinfo-db-export</strong>: Used to export an osinfo database archive;</p></li>
+
+<li><p><strong>osinfo-db-validate</strong>: Used to validate the XML files in one of the osinfo
+database locations for compliance with the RNG schema.</p></li>
+
+<li><p><strong>osinfo-db-path</strong>: Used to report the paths associated with the standard
+database locations;</p></li>
+</ul>
+
+<h3 id="the-consumers">The consumers &hellip;</h3>
+
+<p>Libosinfo and osinfo-db have management applications as their target audience.
+Currently the libosinfo project is consumed by big players in the virtual
+machine management environment such as <a href="https://docs.openstack.org/nova/latest/">OpenStack Nova</a>, <a href="https://virt-manager.org">virt-manager</a>, <a href="https://wiki.gnome.org/Apps/Boxes">GNOME Boxes</a>,
+and <a href="https://cockpit-project/guide/latest/feature-virtualmachines">Cockpit Machines</a>.</p>
+
+<h4 id="a-little-bit-about-them">&hellip; a little bit about them &hellip;</h4>
+
+<ul>
+<li><p><a href="https://docs.openstack.org/nova/latest/">OpenStack Nova</a>: An <a href="https://www.openstack.org/">OpenStack</a> project that provides a way to provision virtual
+machines, baremetal servers, and (limited supported for) system containers.</p></li>
+
+<li><p><a href="https://virt-manager.org">virt-manager</a>: An application for managing
+virtual machines through libvirt.</p></li>
+
+<li><p><a href="https://wiki.gnome.org/Apps/Boxes">GNOME Boxes</a>: A simple application to
+view, access, and manage remote and virtual systems.</p></li>
+
+<li><p><a href="https://cockpit-project/guide/latest/feature-virtualmachines">Cockpit Machines</a>: A <a href="https://cockpit-project.org/">Cockpit</a> extension to manage virtual machines running
+on the host.</p></li>
+</ul>
+
+<h4 id="and-why-they-use-it">&hellip; and why they use it</h4>
+
+<ul class="task-list">
+<li><p><strong>Download ISOs</strong>: As libosinfo provides the ISO URLs, management
+applications can offer the user the option to download a specific operating
+system;</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> virt-manager</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Cockpit Machines</label></li>
+</ul></li>
+
+<li><p><strong>Automatically detect the ISO being used</strong>: As libosinfo can detect the
+operating system of an ISO, management applications can use this info to
+set reasonable default values for resources, to select the hardware
+supported, and to perform unattended installations.</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+</ul></li>
+
+<li><p><strong>Start tree installation</strong>: As libosinfo provides the tree installation
+URLs, management applications can use it to start a network-based
+installation without having to download the whole operating system ISO;</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager (via virt-install)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> GNOME Boxes</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+</ul></li>
+
+<li><p><strong>Set reasonable default values for RAM, CPU, and disk resources</strong>: As
+libosinfo knows the values that are recommended by the operating system&rsquo;s
+vendors, management applications can rely on that when setting the default
+resources for an installation.</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+</ul></li>
+
+<li><p><strong>Automatically set the hardware supported</strong>: As libosinfo provides the list
+of hardware supported by an operating system, management applications can
+choose the best defaults based on this information, without taking the risk
+of ending up with a non-bootable guest.</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines (via virt-install)</label></li>
+</ul></li>
+
+<li><p><strong>Unattended install</strong>: as libosinfo provides unattended installations
+scripts for CentOS, Debian, Fedora, Fedora Silverblue, Microsoft Windows,
+OpenSUSE, Red Hat Enterprise Linux, and Ubuntu, management applications can
+perform unattended installations for both &ldquo;Workstation&rdquo; and &ldquo;Server&rdquo;
+profiles.</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> OpenStack Nova</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager (via virt-install)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes (only supports &ldquo;Workstation&rdquo; installations)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Cockpit Machines (this is still a <a href="https://github.com/cockpit-project/cockpit/pull/12716">work-in-progress</a>)</label></li>
+</ul></li>
+</ul>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>The next blog post will provide a &ldquo;demo&rdquo; of an unattended installation using
+both GNOME Boxes and virt-install and, based on that, explain how libosinfo is
+internally used by these projects.</p>
+
+<p>By doing that, we&rsquo;ll both cover how libosinfo can be used and also demonstrate
+how it can ease the usage of those management applications.</p>
+</div>
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">Does it help you? Pay me a beer next time we meet!</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

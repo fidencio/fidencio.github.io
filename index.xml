@@ -6,10 +6,20 @@
     <description>Recent content on Let&#39;s talk about ...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fidencio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Libosinfo (Part I)</title>
+      <link>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</guid>
+      <description>This is the first blog post of a series which will cover Libosinfo, what it is, who uses it, how it is used, how to manage it, and, finally, how to contribute to it.
+A quick overview Libosinfo is the operating system information database. As a project, it consists of three different parts, with the goal to provide a single place containing all the required information about an operating system in order to provision and manage it in a virtualized environment.</description>
+    </item>
     
     <item>
       <title>A Fresh Start</title>
