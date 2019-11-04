@@ -219,7 +219,7 @@ database locations;</p></li>
 <p>Libosinfo and osinfo-db have management applications as their target audience.
 Currently the libosinfo project is consumed by big players in the virtual
 machine management environment such as <a href="https://docs.openstack.org/nova/latest/">OpenStack Nova</a>, <a href="https://virt-manager.org">virt-manager</a>, <a href="https://wiki.gnome.org/Apps/Boxes">GNOME Boxes</a>,
-and <a href="https://cockpit-project/guide/latest/feature-virtualmachines">Cockpit Machines</a>.</p>
+<a href="https://cockpit-project/guide/latest/feature-virtualmachines">Cockpit Machines</a>, and <a href="https://kubevirt.io">KubeVirt</a>.</p>
 
 <h4 id="a-little-bit-about-them">&hellip; a little bit about them &hellip;</h4>
 
@@ -235,6 +235,8 @@ view, access, and manage remote and virtual systems.</p></li>
 
 <li><p><a href="https://cockpit-project/guide/latest/feature-virtualmachines">Cockpit Machines</a>: A <a href="https://cockpit-project.org/">Cockpit</a> extension to manage virtual machines running
 on the host.</p></li>
+
+<li><p><a href="https://kubevirt.io/">KubeVirt</a>: Virtual Machine Management on Kubernetes.</p></li>
 </ul>
 
 <h4 id="and-why-they-use-it">&hellip; and why they use it</h4>
@@ -249,6 +251,7 @@ system;</p>
 <li><label><input type="checkbox" disabled class="task-list-item"> virt-manager</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Cockpit Machines</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 
 <li><p><strong>Automatically detect the ISO being used</strong>: As libosinfo can detect the
@@ -261,6 +264,7 @@ supported, and to perform unattended installations.</p>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 
 <li><p><strong>Start tree installation</strong>: As libosinfo provides the tree installation
@@ -272,6 +276,7 @@ installation without having to download the whole operating system ISO;</p>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager (via virt-install)</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> GNOME Boxes</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 
 <li><p><strong>Set reasonable default values for RAM, CPU, and disk resources</strong>: As
@@ -284,6 +289,7 @@ resources for an installation.</p>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 
 <li><p><strong>Automatically set the hardware supported</strong>: As libosinfo provides the list
@@ -296,6 +302,7 @@ of ending up with a non-bootable guest.</p>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Cockpit Machines (via virt-install)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 
 <li><p><strong>Unattended install</strong>: as libosinfo provides unattended installations
@@ -309,6 +316,7 @@ profiles.</p>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> virt-manager (via virt-install)</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> GNOME Boxes (only supports &ldquo;Workstation&rdquo; installations)</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Cockpit Machines (this is still a <a href="https://github.com/cockpit-project/cockpit/pull/12716">work-in-progress</a>)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> KubeVirt</label></li>
 </ul></li>
 </ul>
 

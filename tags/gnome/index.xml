@@ -99,7 +99,7 @@ database locations;&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Libosinfo and osinfo-db have management applications as their target audience.
 Currently the libosinfo project is consumed by big players in the virtual
 machine management environment such as &lt;a href=&#34;https://docs.openstack.org/nova/latest/&#34;&gt;OpenStack Nova&lt;/a&gt;, &lt;a href=&#34;https://virt-manager.org&#34;&gt;virt-manager&lt;/a&gt;, &lt;a href=&#34;https://wiki.gnome.org/Apps/Boxes&#34;&gt;GNOME Boxes&lt;/a&gt;,
-and &lt;a href=&#34;https://cockpit-project/guide/latest/feature-virtualmachines&#34;&gt;Cockpit Machines&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://cockpit-project/guide/latest/feature-virtualmachines&#34;&gt;Cockpit Machines&lt;/a&gt;, and &lt;a href=&#34;https://kubevirt.io&#34;&gt;KubeVirt&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&#34;a-little-bit-about-them&#34;&gt;&amp;hellip; a little bit about them &amp;hellip;&lt;/h4&gt;
 
@@ -115,6 +115,8 @@ view, access, and manage remote and virtual systems.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://cockpit-project/guide/latest/feature-virtualmachines&#34;&gt;Cockpit Machines&lt;/a&gt;: A &lt;a href=&#34;https://cockpit-project.org/&#34;&gt;Cockpit&lt;/a&gt; extension to manage virtual machines running
 on the host.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://kubevirt.io/&#34;&gt;KubeVirt&lt;/a&gt;: Virtual Machine Management on Kubernetes.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;and-why-they-use-it&#34;&gt;&amp;hellip; and why they use it&lt;/h4&gt;
@@ -129,6 +131,7 @@ system;&lt;/p&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Automatically detect the ISO being used&lt;/strong&gt;: As libosinfo can detect the
@@ -141,6 +144,7 @@ supported, and to perform unattended installations.&lt;/p&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Start tree installation&lt;/strong&gt;: As libosinfo provides the tree installation
@@ -152,6 +156,7 @@ installation without having to download the whole operating system ISO;&lt;/p&gt
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager (via virt-install)&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Set reasonable default values for RAM, CPU, and disk resources&lt;/strong&gt;: As
@@ -164,6 +169,7 @@ resources for an installation.&lt;/p&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Automatically set the hardware supported&lt;/strong&gt;: As libosinfo provides the list
@@ -176,6 +182,7 @@ of ending up with a non-bootable guest.&lt;/p&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines (via virt-install)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Unattended install&lt;/strong&gt;: as libosinfo provides unattended installations
@@ -189,6 +196,7 @@ profiles.&lt;/p&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; virt-manager (via virt-install)&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; GNOME Boxes (only supports &amp;ldquo;Workstation&amp;rdquo; installations)&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Cockpit Machines (this is still a &lt;a href=&#34;https://github.com/cockpit-project/cockpit/pull/12716&#34;&gt;work-in-progress&lt;/a&gt;)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; KubeVirt&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
