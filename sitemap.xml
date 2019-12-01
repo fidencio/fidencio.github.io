@@ -3,37 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fidencio.github.io/posts/2019-12-01-adopting-gitlab-workflow/</loc>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fidencio.github.io/tags/fedora/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fidencio.github.io/tags/gnome/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fidencio.github.io/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fidencio.github.io/posts/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fidencio.github.io/tags/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fidencio.github.io/tags/virt/</loc>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fidencio.github.io/posts/2019-10-16-libosinfo-part-i/</loc>
     <lastmod>2019-10-16T00:00:00+00:00</lastmod>
   </url>
   
